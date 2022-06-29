@@ -4,11 +4,13 @@ namespace Chisp8
 {
     internal class Renderer
     {
-        public const int SCREEN_W = 64,
-            SCREEN_H = 32;
-        private readonly bool[,] Screen = new bool[SCREEN_W, SCREEN_H];
-        private bool redraw;
+        public static int Width = 64,
+            Height = 32;
+        public readonly bool[,] buffer = new bool[Width, Height];
+        public readonly bool[,] redrawBuffer = new bool[Width, Height];
 
-        public void Clear() => Array.Clear(Screen);
+        public bool redraw;
+
+        public void Clear() => Array.Clear(buffer);
     }
 }
